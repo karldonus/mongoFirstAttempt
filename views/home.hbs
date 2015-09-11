@@ -5,12 +5,12 @@
     <title>MongoDB Attempt</title>
   </head>
   <body>
-    <h1>Mongo is the worlds #1 football web app.</h1>
+    <h1>Mongo is the world's #1 football web app.</h1>
     <ul>
       {{#each users}}
       <li>
 
-        Name: {{name}} // Age: {{age}} // Roles: {{roles}}
+        Name: {{name}} // Age: {{age}} // Roles: {{#each roles}}-{{this}}-{{/each}}
 
       </li>
       {{/each}}
