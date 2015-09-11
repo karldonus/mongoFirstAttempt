@@ -1,12 +1,12 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var mongoose = require('mongoose');
 
 app.use("/", express.static(path.join(__dirname + "/public")));
 app.set("view engine", "hbs");
 
 //Lets load the mongoose module in our program
+var mongoose = require('mongoose');
 
 //Lets connect to our database using the DB server URL.
 mongoose.connect('mongodb://localhost/names');
@@ -48,6 +48,7 @@ user2.save(function (err, userObj) {
   }
 });
 
+//.find() is a mongo method
 app.get('/', function (req, res) {
   User.find().then(function(users){
     res.render("home", {users: users});

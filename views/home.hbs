@@ -1,19 +1,27 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MongoDB Attempt</title>
+    <title>Mongo</title>
   </head>
   <body>
-    <h1>Mongo is the world's #1 football web app.</h1>
+    <h2>Mongo is the worlds #1 football web app.</h2>
+
     <ul>
       {{#each users}}
       <li>
-
-        Name: {{name}} // Age: {{age}} // Roles: {{#each roles}}-{{this}}-{{/each}}
-
+        <div>
+          <p>Name: {{name}}</p>
+          <p>Age: {{age}}</p>
+          <p>Roles:
+            <ul>
+              {{#each roles}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul></p>
+        </div>
       </li>
       {{/each}}
     </ul>
+
   </body>
 </html>
